@@ -44,6 +44,14 @@ header{
   list-style-type: none;
   font-size: 1.2em;
   column-gap: 3.9em;
+  background: hsl(0 0% 0% / 0.5); /* hue, saturation, lightness*/
+}
+
+@supports (backdrop-filter: blur(1rem) /* higher value for more blur effect*/) {
+  .menu {
+    background: hsl(0 0% 100% / 0.1);
+    backdrop-filter: blur(1rem);
+  }
 }
 /*main*/
 main {
@@ -78,4 +86,23 @@ footer{
   font-weight: 300;
   font-size: 0.7em;
   padding: 14px 20px;
+}
+
+@media (max-width: 824px) {
+  h1 {
+    color: red;
+  }
+
+  #logo {
+    color: blue;
+  }
+
+  .menu{
+    position: fixed;
+    inset: 0 0 0 30%;
+    
+    flex-direction: column;
+
+    padding: min(30vh, 10rem), 2em;
+  }
 }
